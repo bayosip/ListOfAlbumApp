@@ -127,19 +127,25 @@
         </LinearLayout>
 
     </LinearLayout>
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/list"
-        android:name="com.vertex5.jpmorganalbums.view.fragments.ItemFragment"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refresh"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layoutManager="LinearLayoutManager"
-        tools:context=".view.fragments.AlbumFragment"
-        tools:listitem="@layout/item_album"
         app:layout_constraintStart_toEndOf="@id/guideline_start"
         app:layout_constraintEnd_toEndOf="@id/guideline_end"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/guideline_list_top"
-        />
+        app:layout_constraintTop_toBottomOf="@id/guideline_list_top">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list"
+            android:name="com.vertex5.jpmorganalbums.view.fragments.ItemFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="LinearLayoutManager"
+            tools:context=".view.fragments.AlbumFragment"
+            tools:listitem="@layout/item_album" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

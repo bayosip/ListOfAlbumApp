@@ -11,4 +11,5 @@
     <color name="text_color_grey_lite">#828282</color>
     <color name="text_color_grey_mid">#747474</color>
     <color name="text_color_grey_dark">#2C2C2C</color>
+    <color name="goldish">#BCA368</color>
 </resources>

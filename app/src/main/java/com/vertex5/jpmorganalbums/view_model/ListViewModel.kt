@@ -51,6 +51,13 @@ class ListViewModel( app: Application): AndroidViewModel(app)  {
         }
     }
 
+    fun deleteDataInDb(){
+        viewModelScope.launch {
+            repo.deleteAllInDb()
+        }
+
+    }
+
     enum class OrderType{
         ASC, DESC
     }

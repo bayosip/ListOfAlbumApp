@@ -107,5 +107,9 @@ class Repository private constructor(val dao:AlbumDAO, val scope: CoroutineScope
         albumData.value = albumList
     }
 
+    suspend fun deleteAllInDb() {
+        dao.deleteAll()
+    }
+
 
 }
