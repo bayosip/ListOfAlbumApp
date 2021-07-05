@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.0533"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9467"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.02824"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_search_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1174"/>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_search_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.171"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_list_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1991"/>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_btn_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8494"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_btn_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9116"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_btn_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3253"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_btn_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.6747"/>
+
+
+    <LinearLayout
+        android:id="@+id/calibrate_search"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:weightSum="1"
+        app:layout_constraintStart_toEndOf="@id/guideline_start"
+        app:layout_constraintEnd_toStartOf="@id/guideline_end"
+        app:layout_constraintTop_toBottomOf="@id/guideline_top"
+        app:layout_constraintBottom_toTopOf="@id/guideline_list_top">
+
+        <TextView
+            android:id="@+id/txt_calibration_intro"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:text="Albums"
+            android:textStyle="bold"
+            android:textColor="@color/text_color_grey"
+            android:textSize="38sp"
+            android:lineSpacingExtra="8sp"
+            android:layout_marginBottom="5dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.4"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_filter"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/curved_white_layout"
+                android:textSize="18sp"
+                android:textColor="@color/text_color_grey"
+                android:text="@string/filter"
+                android:textStyle="bold"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:drawablePadding="10dp"
+                android:drawableStart="@drawable/ic_filter_24"
+                android:lineSpacingExtra="4sp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list"
+        android:name="com.vertex5.jpmorganalbums.view.fragments.ItemFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layoutManager="LinearLayoutManager"
+        tools:context=".view.fragments.AlbumFragment"
+        tools:listitem="@layout/item_album"
+        app:layout_constraintStart_toEndOf="@id/guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline_list_top"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

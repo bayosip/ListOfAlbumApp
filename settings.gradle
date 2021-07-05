@@ -1,0 +1,2 @@
+rootProject.name = "JPMorgan Albums"
+include ':app'

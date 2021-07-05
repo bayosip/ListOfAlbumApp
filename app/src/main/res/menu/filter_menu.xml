@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/filter_asc"
+        android:title="@string/a_z"
+        android:checkable="true"
+        />
+    <item android:id="@+id/filter_desc"
+        android:title="@string/z_a"
+        android:checkable="true"
+        />
+</menu>
