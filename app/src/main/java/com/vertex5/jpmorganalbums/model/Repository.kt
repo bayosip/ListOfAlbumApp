@@ -5,7 +5,6 @@ import androidx.annotation.WorkerThread
 import androidx.lifecycle.MutableLiveData
 import com.vertex5.jpmorganalbums.model.data.Album
 import com.vertex5.jpmorganalbums.model.data.AlbumDAO
-import com.vertex5.jpmorganalbums.model.network.AlbumRetrivalService
 import com.vertex5.jpmorganalbums.model.network.NetworkInteractor
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -14,8 +13,6 @@ import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 class Repository private constructor(val dao:AlbumDAO, val scope: CoroutineScope) {
 
@@ -80,7 +77,7 @@ class Repository private constructor(val dao:AlbumDAO, val scope: CoroutineScope
     }
 
     suspend fun getAlbumDataFromNetwork(){
-        val resultList = albumNetwork.getRepositories()
+        val resultList = albumNetwork.getAlbums()
         albumList.clear()
         albumList.addAll(resultList)
         albumData.value = albumList

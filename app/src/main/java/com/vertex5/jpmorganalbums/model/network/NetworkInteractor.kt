@@ -21,7 +21,7 @@ class NetworkInteractor {
         service = retrofit.create(AlbumRetrivalService::class.java)
     }
 
-    suspend fun getRepositories():List<Album> {
+    suspend fun getAlbums():List<Album> {
         val call = service.retrieveAlbumsFromNetwork()
         return call
     }
